@@ -1,0 +1,150 @@
+@import "tailwindcss";
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Iosevka Charon', monospace;
+  margin: 0;
+}
+
+section { padding: 60px 20px; }
+header, footer {
+  background-color:#333;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+}
+
+.footer {
+  padding: 10px;
+}
+
+.header {
+  transition: height, background-color 500ms ease-out;
+}
+
+@media (min-width: 64rem) {
+  .header.header-scrolled {
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.advantages, .services, .team {
+  display:flex;
+  gap:20px;
+  justify-content:center;
+}
+.price-table {
+  border-collapse: collapse;
+  width: 60%;
+  margin:auto;
+}
+.price-table th, .price-table td {
+  border:1px solid #ccc;
+  padding:10px;
+  text-align:center;
+}
+.truck, .police {
+  position: fixed;
+  transition: transform 0.3s;
+}
+
+.truck {
+  left: -50px;
+  bottom: 40px;
+}
+.police {
+  left: 0px;
+  width: 80px;
+  bottom: 30px;
+} /* стартует чуть позади */
+
+@media (max-width: 63rem) {
+  .truck, .police { display:none; }
+}
+
+.truck {
+  position:fixed;
+  left:0;
+  width:200px;
+  transition: transform 0.3s;
+}
+
+.trafficlight {
+  width: 20px;
+  height: 60px;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  left: auto;
+}
+.light-red.active {
+  fill: red;
+  filter: drop-shadow(0 0 8px red);
+}
+.light-yellow.active {
+  fill: yellow;
+  filter: drop-shadow(0 0 8px yellow);
+}
+.light-green.active {
+  fill: green;
+  filter: drop-shadow(0 0 8px green);
+}
+
+.logo {
+  display: inline-block;
+  width: 100px;
+  height: 25px;
+}
+
+.hero-section {
+  position: relative;
+  height: calc(100vh - 80px);
+}
+
+.welcome-btn {
+  color: #fff;
+}
+
+.welcome-text {
+  font-style: italic;
+}
+
+.bg-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -10;
+  background-image: url('./images/maxim-tolchinskiy-crHhZlES310-unsplash.webp');
+  background-size: cover;
+  background-position: center;
+}
+.feature-icon {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+@media (width >= 64rem) {
+  .feature-icon {
+    width: 32px;
+    height: 32px;
+    margin: 10px;
+  }
+}
